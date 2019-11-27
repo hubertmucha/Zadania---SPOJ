@@ -1,0 +1,48 @@
+import math
+
+#zmienne
+
+n = int(input())
+a = []
+b = []
+i = 0
+wyniki =[]
+#funckja
+def foo(a,b):
+
+    okresy = []
+    n = 1
+    buf =0
+    t =0
+    while True:
+        buf = str(pow(a,n))
+        if buf[-1] in okresy:
+            t = len(okresy)
+
+            break
+        else:
+            okresy.append(buf[-1])
+
+            n =n+1
+            continue
+
+
+    return okresy[b%t-1]
+
+
+#main
+while(i<n):
+    var = input()
+    var = var.split(sep=' ')
+    a.append(int(var[0]))
+    b.append(int(var[1]))
+    i=i+1
+
+i =0
+
+while(i<n):
+    wyniki.append(foo(a[i],b[i]))
+    i=i+1
+
+for n in wyniki:
+    print(n)
