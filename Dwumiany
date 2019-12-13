@@ -1,0 +1,28 @@
+t = int(input())
+
+array = []
+ans = []
+
+def comb(n,k):
+    var_n_k = n-k
+
+    ans = silnia(n)/(silnia(var_n_k)*silnia(k))
+    return ans
+
+def silnia(n):
+    ans = 1
+    for x in range(1,n+1):
+        ans = ans*x
+    return ans
+
+for times in range(0,t):
+    var_input =  input()
+    array.append(var_input)
+
+
+for string in array:
+    string = string.split(sep=' ')
+    ans.append(comb(int(string[0]),int(string[1])))
+
+for line in ans:
+    print(int(line))
